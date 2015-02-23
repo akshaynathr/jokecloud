@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Joke Cloud</title>
+
+    <link rel="stylesheet" href='{{url_for('static',filename='login/css/style.css')}}' media="screen" type="text/css" />
+
+    <style type="text/css">
+.block{ width: 500px; height: 600px;  border-radius: 1em; margin-bottom: 5em; margin-top: 2em; background-color: tr; margin-left:1em margin-right: auto; float: left;}
+.header{width: 100%; height: 80px; padding: 1em;}
+
+.b1{  width: 100px;}
+    .content{ width: 100%; padding: 3em;} 
+
+ #login{ color: #fff;}
+    </style>
+
+</head>
+
+<body>
+
+  <div id="wrap">
+  <div id="regbar">
+    <div id="navthing">
+      <h2><a href="#" id="loginform">Login</a> | <a href="#">Register</a></h2>
+    <div class="login">
+      <div class="arrow-up"></div>
+      <div class="formholder">
+        <div class="randompad">
+           <fieldset>
+             <label name="email">Email</label>
+             <input type="email" value="example@example.com" />
+             <label name="password">Password</label>
+             <input type="password" />
+             <input type="submit" value="Login" />
+
+           </fieldset>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+<!--<div class="content"> 
+
+ <div class="block" id="{{ image.pk }}">
+  <div class="header"><h1> {{ image.header }}</h1></div>
+  
+  <img src="{{ image.img_path }}" width="{{ image.width }}"  height="{{ image.height }}" />
+
+  <div class="block b1"> 
+</div>-->
+
+<div class=content> <h3 id="login"> Welcome to Joke Cloud</h3></div>
+
+
+</div>
+
+
+  <script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
+
+  <script src="{{url_for('static',filename='login/js/index.js')}}"></script>
+
+</body>
+
+</html>

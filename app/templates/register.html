@@ -1,0 +1,33 @@
+<head>
+  <link href='http://fonts.googleapis.com/css' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{{url_for('static' ,filename='layout.css' )}}">
+</head>
+<body>
+  <div class="ribbon"></div>
+  <div class="login">
+  <h1 style="color=#eee"><p style="color=#eee">Joke Cloud</p></h1>
+  <p>Don't even try to hold your laugh</p>
+  <form action="register" method="post" id="register_form">
+    <div class="input">
+       <div class="blockinput">
+        
+      <i class="icon-envelope-alt"></i><input name="name" type="text" placeholder="Name">
+      </div>
+        
+
+      <div class="blockinput">
+
+      <i class="icon-envelope-alt"></i><input name="email" type="mail" placeholder="Email">
+      </div>
+      <div class="blockinput">
+        <i class="icon-unlock"></i><input  name= "pwd" type="password" placeholder="Password">
+      </div>
+    </div>
+    <button type="submit" form="register_form" value="SignUp">SignUp</button>
+    
+  </form>
+  </div>
+  
+  
+  
+</body>

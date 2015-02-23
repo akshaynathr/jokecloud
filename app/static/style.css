@@ -1,0 +1,22 @@
+    body
+    {
+        width:40%;
+        margin-left:auto;
+        margin-right:auto;
+        background-color: #F8F8F8;
+    }
+
+.upload_box{ 
+	margin-top: 1em;
+margin: auto;
+padding:5em;
+ 
+background-color: #434343;color:#fff;
+height: 250px; opacity: .8;
+width: 250px;
+ -webkit-box-shadow:5px 0px 10px #707070;
+-moz-box-shadow: 5px 0px 10px #707070;
+box-shadow: 5px 0px 10px #707070;
+}
+
+.inner{ display: inline;}
