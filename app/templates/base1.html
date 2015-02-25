@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head><title> Joke Cloud</title>
+<!-- fonts    ///////////////////////////////////////////////////////-->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="{{ url_for('static', filename="jquery.colorbox.js") }}" />
+<style type="text/css">
+	html, body {
+	    height: 100%;font-family: 'Open Sans', sans-serif;
+      background-color: #36465D;
+	}
+
+	html {
+    
+    margin: auto;
+	}
+
+
+
+	.content{ margin-top: 0px;padding: 2em;background-color: #E3E3E3; width:600px;display: table;  margin: auto;}
+	.wrapper{
+	display: table-cell;
+    vertical-align: middle;
+	}
+	.top{    padding: 10px;  display: block;  height: 150px;
+    }
+	a{ color: #fff; text-decoration: none; margin:4px; padding: 0; top:50px;}
+	.warning{ width: 40%; height: 600px;  border-radius: 1em; margin-bottom: 5em; margin-top: 2em; background-color: #55C4BB; margin:3px;   }
+
+	.animation{ display: none; margin-left:auto; margin-right:auto; width: 50%;}
+
+  .upload{  margin: 3px;}
+  .logout{  margin: 3px;}
+</style> 
+	 
+ 		
+
+ <script >
+
+$('.upload').colorbox({$(function ()
+    {
+        $(".upload").colorbox({iframe:true, innerWidth:425, innerHeight:344});    
+    })})
+
+</script>
+
+<script type="text/javascript">
+
+$('document').ready(function(){  
+    updatestatus();  
+    scrollalert();  
+});  
+
+$(window).scroll()=function(){ $(.top).css("background-color","blue");}
+
+  count=1;
+  var ready=true;
+$(window).scroll(function() {   
+   if($(window).scrollTop() + $(window).height() == $(document).height()) {
+      //alert("bottom!");
+      /*$.ajax({
+    url: "http://0.0.0.0:5000/uploadtest",
+    type:'get',
+    data: {ajax:count},
+    dataType: 'json',
+    success: function(response) {
+      //Do
+
+
+   }
+});
+*/
+alert("sdfd");
+}});
+ 
+ 
+
+ 
+ </script>		
+
+
+<link href='{{url_for('static',filename='style2.css')}}' rel="stylesheet" type="text/css" />
+</head>
+   <body>
+	   	
+	<div class="top">
+		
+
+
+
+	 <a href={{url_for('upload')}} class="upload"><img src="{{url_for('static',filename='icons/upload')}}" width="40px" height="40px"/></a>
+
+   <form class="form-wrapper">
+    <input type="text" id="search" placeholder="Search for CSS3, HTML5, jQuery ..." required>
+    <input type="submit" value="go" id="submit">
+</form>
+
+
+   <a href={{url_for('logout')}} class="logout"><img src="{{url_for('static',filename='icons/logout.png')}}" width="40px" height="40px"/></a>
+
+
+    </div>
+	
+	<div class="content">
+
+ 
+ <div id='test' style="display=none"> </div>
+<script>
+ 
+function myFunction(item) {
+ 
+	var parent=item.parentNode;
+	var grandparent=parent.parentNode;
+ 
+	 
+	 
+	var data={'id':grandparent.parentNode.id}
+
+	
+    
+    jQuery.ajax(
+   {
+      type: "POST",
+      dataType: "json",
+      data: JSON.stringify(data),
+       contentType: 'application/json;charset=UTF-8',
+      url: '{{url_for('uptest_post')}}',
+      complete: function(xhr, statusText)
+      {  $( item ).next().text(xhr.responseText);}})
+
+
+
+    }
+         
+</script>
+	<div class="wrapper">
+<br/>
+
+	{% block content %}
+  <br/>
+	{% endblock %}
+
+	</div>
+
+	<div class="animation"><img src="{{ url_for('static',filename="loding.gif") }}" /></div>
+
+	</div>	
+	 
+
+
+  </body>
+
+</html>

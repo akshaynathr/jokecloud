@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<style type="text/css">
+
+body{padding: 0px; margin: 0; }
+.block{ width: 500px; height: 595px;   margin-bottom: 5em; margin-top: 5px; background-color: #fff; margin-left: auto; margin-right: auto; padding: 10px;
+-webkit-box-shadow:5px 0px 10px #707070;
+-moz-box-shadow: 5px 0px 10px #707070;
+box-shadow: 5px 0px 10px #707070;}
+.header{width: 100%; height: 50px; padding-bottom: 4px; padding-left:5px;margin:0px; color:#585858;font-family: 'Open Sans', sans-serif;}
+.wrap{background-color: #FFF; }
+.controls{width: inherit;height: 65px;padding-top: .2em;   background-color: #fff; border-bottom-left-radius:.5em; border-bottom-right-radius:.5em; opacity: .8; display: inline-block;}
+.controls > p{ width: 1em; color:#419DD5;}
+button{ margin: .5em; width: 110px; height: 50px;border-radius:5px;background-color:#555; background-size:100%;background-image: url("/jokecloud/static/awesome.jpg") no-repeat ; background-repeat: no-repeat;}
+#invisible_id{display: none;}
+#demo{ display: inline-block; font-size: 2em;}
+.propic_bar{ margin: 0px;padding: 5px;position: static; color: #938589;}
+#user{ display: inline; margin-bottom:15px;} 
+#line1{ padding: .2px; margin: 0px;}
+
+</style>
+
+ 
+ 
+	{% for image in images %}
+
+	{% if image.video %}
+		<video src='{{image.video}}' width="500px" max-height="755px"></video>
+	{% endif %}
+
+<div class="block" id="{{ image.pk }}">
+	<div class='wrap'>
+	<div class="propic_bar"> <img src="/jokecloud/bravo.jpg" width="50px" height="48px">
+		<p id="user">{{image.user.name}} </p>
+	</div><hr id="line1"/>
+	<div class="header"><h2 style="font-size:25px; font-weight:bold; padding-top:5px;"> {{ image.header }}</h2></div>
+	
+	<img src="{{ image.img_path }}" width="{{ image.width }}"  height="{{ image.height }}" />
+        
+	 <div class="controls" id="a">
+
+	{% if awesome %}
+<button onclick="myFunction(this)" > Liked</button>
+	{% endif %}
+<button onclick="myFunction(this)" > Not liked</button>
+	<p id="demo">{{image.vote}}</p>
+		
+		 
+
+	
+	 
+
+
+</div>
+	 <br/>
+ 
+ </div>
+</div>
+ 
+
+
+ {% endfor %}
+
+
+
+{% endblock %}

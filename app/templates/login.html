@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	  <script>  
+    
+  </script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- <link rel="icon" href="/favicon.ico"> -->
+
+    <title>JokeCloud</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/jokecloud/static/login/bootstrap.min.css" rel="stylesheet">
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+<link rel="shortcut icon" href="/jokecloud/static/favicon.ico">
+    <!-- Custom styles for this template -->
+<link href="/jokecloud/static/login/signin.css" rel="stylesheet">
+<style>
+		@font-face {
+						font-family: ubuntu;
+						src: url(ubuntu.ttf);
+					}
+		@font-face {
+						font-family: tub;
+						src: url(tb.ttf);
+					}
+		@font-face {
+						font-family: ch;
+						src: url(ch.ttf);
+					}			
+		.divider{
+					width:300px;
+					text-align:center;
+				}
+
+		.divider hr {
+			margin-left:auto;
+			margin-right:auto;
+			width:40%;
+
+		}
+
+		.left {
+			float:left;
+		}
+
+		.right {
+			float:right;
+		}
+		.glowing-border {
+			border: 2px solid #dadada;
+			border-radius: 7px;
+		}
+
+		.glowing-border:focus { 
+			outline: none;
+			border-color: #9ecaed;
+			box-shadow: 0 0 10px #9ecaed;
+		}
+</style>
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-59835557-1', 'auto');
+  ga('send', 'pageview');
+</script>
+</head>
+
+
+
+<body style="background-color:white;background-image:url(/jokecloud/static/login/bg.jpg);background-position:center;background-repeat:no-repeat; min-width:100%;max-width:100%;top=0;left=0;">  
+
+<!-- SCRIPT FOR ANANLYTICS GOOGLE-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-59835557-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+    <div class="container">
+		<div style="box-shadow: 0 0 30px black; width:600px; height:490px; border-radius:10px; margin:0 auto; background-size:150%;background-repeat:no-repeat;background-image:url(/jokecloud/static/login/bg2.jpg);background-position:top-left;">	
+			<a href="{{url_for('register')}}"   style="float:right;margin-right:10px;margin-top:10px" class="btn btn-default">SIGNUP</a>
+		  <form class="form-signin" method="post" action="login" id="login">
+			  {% if error %} 
+			  <p name="error" style="color:red; font-family:sans; font-size:20px; background-color:#001;"> Email or Password is wrong</p>
+			  {% endif %}
+			<h2 class="text-center" style="font-family:tub;color:white;font-size:40px"><b>JokeCloud</b></h2>
+			<h4 class="text-center" style="color:white;font-family:ubuntu;font-size:22px"> Don't even think of holding your laugh</h4>
+			<button class="btn btn-lg btn-primary btn-block" formnovalidate><img src="/jokecloud/static/login/fb.png" style="margin-right:15px" 
+        onClick="alert("sorry.This service is not enabled right now. Work is in Progress");">Continue with Facebook</button>
+			<div class="divider" >
+				<hr class="left"/></br><span style="color:white;font-family:ubuntu;font-size:15px"><i><b>OR</b></i></span><hr class="right" />
+			</div>
+			 
+			<label for="inputEmail" class="sr-only">Email address</label>
+			<input name='email' type="email" id="inputEmail" class="form-control glowing-border" style="font-family:ubuntu" placeholder="Email" required autofocus>
+			<label for="inputPassword" class="sr-only">Password</label>
+			<input name='pwd' type="password" id="inputPassword" class="form-control glowing-border" style="margin-top:10px ;font-family:ubuntu" placeholder="Password" required>
+			<!-- <div class="checkbox">
+			  <label style="color:white;font-family:ubuntu">
+				<input type="checkbox" value="remember-me"><b>I'll never Forget</b>
+			  </label>
+			</div> -->
+			
+			<button class="btn btn-danger btn-lg btn-block" type="submit" style="color:white" form="login" value="Login">Login</button>
+			 
+			<p style="text-align:center;color:white"></br>Creating an account means you’re fine with JokeCloud's Terms and Privacy Policy.</p> 
+		  </form>
+		</div>
+    </div> <!-- /container -->
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    
+  </body>
+</html>
