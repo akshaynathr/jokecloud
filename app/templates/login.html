@@ -14,11 +14,11 @@
     <title>JokeCloud</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="/jokecloud/static/login/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/login/bootstrap.min.css" rel="stylesheet">
 <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
-<link rel="shortcut icon" href="/jokecloud/static/favicon.ico">
+<link rel="shortcut icon" href="/static/favicon.ico">
     <!-- Custom styles for this template -->
-<link href="/jokecloud/static/login/signin.css" rel="stylesheet">
+<link href="/static/login/signin.css" rel="stylesheet">
 <style>
 		@font-face {
 						font-family: ubuntu;
@@ -76,7 +76,7 @@
 
 
 
-<body style="background-color:white;background-image:url(/jokecloud/static/login/bg.jpg);background-position:center;background-repeat:no-repeat; min-width:100%;max-width:100%;top=0;left=0;">  
+<body style="background-color:white;background-image:url(/static/login/bg.jpg);background-position:center;background-repeat:no-repeat; min-width:100%;max-width:100%;top=0;left=0;">  
 
 <!-- SCRIPT FOR ANANLYTICS GOOGLE-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
 <script>
@@ -91,7 +91,7 @@
 </script>
 <!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
     <div class="container">
-		<div style="box-shadow: 0 0 30px black; width:600px; height:490px; border-radius:10px; margin:0 auto; background-size:150%;background-repeat:no-repeat;background-image:url(/jokecloud/static/login/bg2.jpg);background-position:top-left;">	
+		<div style="box-shadow: 0 0 30px black; width:600px; height:490px; border-radius:10px; margin:0 auto; background-size:150%;background-repeat:no-repeat;background-image:url(/static/login/bg2.jpg);background-position:top-left;">	
 			<a href="{{url_for('register')}}"   style="float:right;margin-right:10px;margin-top:10px" class="btn btn-default">SIGNUP</a>
 		  <form class="form-signin" method="post" action="login" id="login">
 			  {% if error %} 
@@ -99,7 +99,7 @@
 			  {% endif %}
 			<h2 class="text-center" style="font-family:tub;color:white;font-size:40px"><b>JokeCloud</b></h2>
 			<h4 class="text-center" style="color:white;font-family:ubuntu;font-size:22px"> Don't even think of holding your laugh</h4>
-			<button class="btn btn-lg btn-primary btn-block" formnovalidate><img src="/jokecloud/static/login/fb.png" style="margin-right:15px" 
+			<button class="btn btn-lg btn-primary btn-block" formnovalidate><img src="/static/login/fb.png" style="margin-right:15px" 
         onClick="alert("sorry.This service is not enabled right now. Work is in Progress");">Continue with Facebook</button>
 			<div class="divider" >
 				<hr class="left"/></br><span style="color:white;font-family:ubuntu;font-size:15px"><i><b>OR</b></i></span><hr class="right" />
